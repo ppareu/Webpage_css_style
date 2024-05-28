@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프로젝트 소개</title>
+    <link rel="stylesheet" href="/css/doorlock.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">DOORLOCK SYSTEM</div>
+      <nav>
+        <ul>
+          <li><a href="/main.html">HOME</a></li>
+          <li><a href="#about">introduce</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="hero">
+      <div class="hero-content">
+        <h1>도어락 시스템 프로젝트</h1>
+        <p>도어락 시스템으로 집의 안전을 지키세요.</p>
+        <a
+          href="https://github.com/ppareu/Embedded-DoorLockSystem"
+          class="btn-primary"
+          >더 알아보기</a
+        >
+      </div>
+    </section>
+
+    <main>
+      <section id="about">
+        <h2>프로젝트 소개</h2>
+        <p>NUCLEO-F401RE 보드 사용</p>
+        <p>
+          디지털 도어락 장치를 구현하여 온습도 및 도어락 장치를 구현하였으며
+          조이스틱을 이용하여 비밀번호 설정이 가능하다.
+        </p>
+      </section>
+
+      <section id="features">
+        <h2>주요 기능</h2>
+        <div class="feature-cards">
+          <div class="card">
+            <h3>기능 1</h3>
+            <p>
+              비밀번호를 올바르게 넣었을 경우 문이 성공적으로 열리면서 초록색
+            </p>
+            <p>
+              LED와 특정 음악이 재생되지만 틀렸을 경우 붉은색 LED와 다른 노래가
+              재생된다.
+            </p>
+          </div>
+          <div class="card">
+            <h3>기능 2</h3>
+            <p>문이 열린 상태에서 제한 시간을 경과하면 자동으로 문이 닫힌다.</p>
+          </div>
+          <div class="card">
+            <h3>기능 3</h3>
+            <p>
+              온습도 센서에서 온도와 습도 값을 읽어와 OLED Display에 출력한다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery">
+        <h2>GALLERY</h2>
+        <div class="gallery-items">
+          <div class="gallery-item">
+            <img src="/images/doorlock1.png" alt="이미지 1" />
+          </div>
+          <div class="gallery-item">
+            <video autoplay muted loop>
+              <source src="/images/doorlock.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="gallery-item">
+            <img src="/images/doorlock2.png" alt="이미지 3" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2024 DOORLOCK SYSTEM. 박현빈이 개발함.</p>
+    </footer>
+  </body>
+</html>

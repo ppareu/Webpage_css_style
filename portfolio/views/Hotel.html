@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프로젝트 준비중입니다</title>
+
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+      }
+      canvas {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas></canvas>
+    <script>
+      var w = innerWidth,
+        h = innerHeight;
+      var v = Math.min(w, h),
+        ctx;
+      onload = function () {
+        var cvs = document.querySelector("canvas");
+        cvs.width = w;
+        cvs.height = h;
+        ctx = cvs.getContext("2d");
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.font = "10vmin serif";
+
+        animate();
+      };
+
+      function animate() {
+        var t = Date.now() / 1000;
+        ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+        ctx.fillRect(0, 0, w, h);
+        ctx.fillStyle = `rgba(255, 255, 255, ${0.75 + 0.25 * Math.sin(5 * t)})`;
+        ctx.fillText("LOADING", w / 2, h / 2);
+        var balls = 91;
+        for (var i = 0; i < balls; i++) {
+          var angle = (i / balls) * 4 * Math.PI + t / 3;
+          var offset = (Math.pow(Math.cos(angle / 2 + t), 51) * v) / 16;
+          var radius = v / 3 + offset;
+          var x = w / 2 + radius * Math.cos(angle);
+          var y = h / 2 - radius * Math.sin(angle);
+          ctx.fillStyle = `hsl(${(i / balls) * 360}deg, 80%, 80%)`;
+          ctx.beginPath();
+          ctx.arc(x, y, v / 140, 0, 2 * Math.PI);
+          ctx.fill();
+        }
+        requestAnimationFrame(animate);
+      }
+    </script>
+  </body>
+</html>

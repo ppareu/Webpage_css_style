@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Programmer Park Hyeonbin</title>
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/destyle.css@1.0.5/destyle.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
+    />
+    <!-- 라이트 박스로 이미지를 크게 표시 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.3.2/luminous-basic.min.css"
+    />
+    <!-- 애니메이션 추가 -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <a class="logo" href="#header-text">Stellar Whispers</a>
+      <nav>
+        <button class="btn-menu">Menu</button>
+        <ul class="main-nav">
+          <li><a href="#container">Portfolio</a></li>
+          <li><a href="#myProfile">introduce</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <header>
+      <div id="header-text" class="header-text">
+        <p class="header-title">Programmer</p>
+        <h1 class="header-name">PARK HYEONBIN</h1>
+        <p class="header-link">
+          <a href="https://github.com/ppareu">GitHub</a>
+        </p>
+      </div>
+      <div class="header-pattern"></div>
+      <video
+        src="/images/space-video.mp4"
+        poster="/images/space.png"
+        autoplay
+        loop
+        muted
+      ></video>
+    </header>
+
+    <main id="container" class="container">
+      <div class="project">
+        <a href="/views/doorlock.html" class="overlay"></a>
+        <div class="project1"></div>
+        <h2 class="project-title">NUCLEO-F401RE 도어락 시스템</h2>
+      </div>
+
+      <div class="project">
+        <a href="/views/ad_earthquake.html" class="overlay"></a>
+        <div class="project2"></div>
+        <h2 class="project-title">지진 감지 앱</h2>
+      </div>
+
+      <div class="project">
+        <a href="/views/aquarium.html" class="overlay"></a>
+        <div class="project3"></div>
+        <h2 class="project-title">Smart IoT Aquarium</h2>
+      </div>
+
+      <div class="project">
+        <a href="/views/Hotel.html" class="overlay"></a>
+        <div class="project4"></div>
+        <h2 class="project-title">호텔 관리 시스템</h2>
+      </div>
+
+      <div class="project">
+        <a href="/views/Hotel.html" class="overlay"></a>
+        <div class="project5"></div>
+        <h2 class="project-title">거리 감지 시스템</h2>
+      </div>
+
+      <div class="project">
+        <a href="/views/Hotel.html" class="overlay"></a>
+        <div class="project6"></div>
+        <h2 class="project-title">미정</h2>
+      </div>
+    </main>
+
+    <section id="myProfile" class="myProfile">
+      <div class="post-title">
+        <h2 class="h2-title">자기 소개서</h2>
+      </div>
+      <div class="content-container">
+        <div class="post-thumb">
+          <img class="post-img1" src="images/myprofile.jpg" alt="박현빈" />
+        </div>
+        <p class="post-desc">
+          IoT 개발에 열정을 가진 개발자 박현빈입니다. 제가 IoT 개발자가 되기로
+          결심한 이유는 혁신적인 기술을 통해 현실 세계와 디지털 세계를 연결하고,
+          사람들의 삶을 더 편리하고 안전하게 만들 수 있는 기회를 찾기
+          때문입니다. 제가 주로 다루는 기술은 C언어/C++입니다. 이를 통해 IoT
+          장치 간의 통신, 데이터 수집 및 분석, 그리고 응용 프로그램 개발 등을
+          수행할 수 있습니다. IoT 분야에서 지속적인 학습과 연구를 통해 새로운
+          기술과 트렌드에 대한 이해를 높이고, 그것을 실제 프로젝트에 적용하는
+          것을 목표로 삼고 있습니다.
+        </p>
+      </div>
+    </section>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

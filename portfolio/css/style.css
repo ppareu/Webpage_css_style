@@ -1,0 +1,359 @@
+@charset 'UTF-8';
+
+/*=======================================================
+COLORS - 다크 모드 설정
+=======================================================*/
+:root {
+  --text: #333;
+  --bg: #fff;
+  --video-opacity: 0.5;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #ddd;
+    --bg: #000;
+    --video-opacity: 0.7;
+  }
+}
+
+/*=======================================================
+GENERAL STYLING
+=======================================================*/
+html {
+  font-size: 100%;
+}
+body {
+  color: var(--text);
+  background: var(--bg);
+  font-family: "Bree Serif", sans-serif;
+  transition: 0.5s;
+  overflow-x: hidden;
+}
+
+h2 {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/*=======================================================
+COMMON
+=======================================================*/
+
+div .project {
+  max-width: 100%;
+}
+a:hover {
+  color: #0bd;
+}
+
+/*=======================================================
+네비게이션 바 부분
+=======================================================*/
+
+/* 기본 설정 */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* 네비게이션 메뉴 설정 */
+.btn-menu {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none; /* 데스크톱에서는 숨김 처리 */
+}
+
+.main-nav {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.main-nav.open-menu {
+  display: block;
+  /* width: 100%; */
+}
+
+.main-nav li {
+  padding: 0 15px;
+}
+
+.main-nav li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.main-nav li a:hover {
+  color: #007bff; /* 호버 시 색상 변경 */
+}
+
+/* 모바일용 네비게이션 메뉴 */
+@media (max-width: 768px) {
+  .btn-menu {
+    display: block;
+  }
+
+  .main-nav {
+    position: absolute;
+    background-color: black;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    display: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+  }
+
+  .main-nav li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .main-nav li a {
+    padding: 10px 20px;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .btn-menu {
+    position: relative;
+    z-index: 5;
+  }
+
+  .myProfile {
+    padding: 20px;
+    background-size: cover;
+  }
+
+  .post-title {
+    margin-bottom: 10px;
+  }
+
+  .h2-title {
+    font-size: 24px;
+  }
+
+  .content-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .post-img1 {
+    max-width: 200px; /* 이미지 크기 조정 */
+  }
+
+  .post-desc {
+    font-size: 16px; /* 텍스트 크기 조정 */
+    padding: 15px;
+  }
+}
+
+/*=======================================================
+HEADER
+=======================================================*/
+header {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+.header-text {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  text-align: center;
+}
+.header-title {
+  font-size: 2rem;
+}
+.header-name {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+.header-link {
+  font-size: 1.25rem;
+}
+.header-pattern {
+  /* 줄무늬 설정 */
+  position: absolute;
+  z-index: 1;
+  background-size: auto auto;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    var(--bg) 2px,
+    var(--bg) 4px
+  );
+}
+header video {
+  /* 동영상을 화면 크기로 맞춤.*/
+  object-fit: cover;
+  object-position: center top;
+  opacity: var(--video-opacity);
+}
+.header-text,
+.header-pattern,
+header video {
+  width: 100vw;
+  height: 90vh;
+}
+
+/*=======================================================
+프로젝트
+=======================================================*/
+.container {
+  width: 94vw;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+  display: grid;
+  gap: 2vw;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-auto-rows: minmax(500px, auto);
+}
+
+.project {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: all 0.1s;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 219, 112, 0.8) 45%,
+    rgba(132, 50, 255, 0.6) 50%,
+    transparent 54%
+  );
+  filter: brightness(1.5) opacity(0.8);
+  mix-blend-mode: color-dodge;
+  background-size: 150% 150%;
+  background-position: 100%;
+  transition: all 0.1s;
+}
+
+.project1,
+.project2,
+.project3,
+.project4,
+.project5,
+.project6 {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.project1 {
+  background-image: url("../images/project1.jpg");
+}
+
+.project2 {
+  background-image: url("../images/project2.jpg");
+}
+
+.project3 {
+  background-image: url("../images/project3.jpg");
+}
+
+.project4 {
+  background-image: url("../images/project4.jpg");
+}
+
+.project5 {
+  background-image: url("../images/project5.jpeg");
+}
+
+.project6 {
+  background-image: url("../images/project6.jpeg");
+}
+
+.project-title {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 1;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/*=======================================================
+자기소개
+=======================================================*/
+
+.myProfile {
+  background-image: url("../images/space1.jpg");
+  margin: 100px auto;
+  color: white;
+  padding: 30px;
+}
+
+.post-title {
+  margin-bottom: 20px;
+  align-items: center;
+  text-align: center;
+}
+
+.h2-title {
+  font-size: 35px;
+  padding-bottom: 10px;
+}
+
+.post-thumb {
+  margin-bottom: 20px;
+}
+
+.content-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 200px;
+}
+
+.post-img1 {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 50%;
+}
+.post-desc {
+  max-width: 900px;
+  font-size: 20px;
+  line-height: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+}
