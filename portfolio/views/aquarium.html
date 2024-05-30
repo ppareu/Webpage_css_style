@@ -3,61 +3,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>프로젝트 준비중입니다</title>
-
-    <style>
-      body,
-      html {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        width: 100%;
-        height: 100%;
-      }
-      canvas {
-        display: block;
-      }
-    </style>
+    <link rel="stylesheet" href="/css/aquarium.css" />
+    <title>아쿠아리움 프로젝트</title>
   </head>
   <body>
-    <canvas></canvas>
-    <script>
-      var w = innerWidth,
-        h = innerHeight;
-      var v = Math.min(w, h),
-        ctx;
-      onload = function () {
-        var cvs = document.querySelector("canvas");
-        cvs.width = w;
-        cvs.height = h;
-        ctx = cvs.getContext("2d");
-        ctx.textAlign = "center";
-        ctx.textBaseline = "middle";
-        ctx.font = "10vmin serif";
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="/main.html">Aquarium Project</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="/main.html">Home</a></li>
+          <li><a href="https://github.com/ppareu">GitHub</a></li>
+        </ul>
+      </div>
+    </nav>
 
-        animate();
-      };
-
-      function animate() {
-        var t = Date.now() / 1000;
-        ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
-        ctx.fillRect(0, 0, w, h);
-        ctx.fillStyle = `rgba(255, 255, 255, ${0.75 + 0.25 * Math.sin(5 * t)})`;
-        ctx.fillText("LOADING", w / 2, h / 2);
-        var balls = 91;
-        for (var i = 0; i < balls; i++) {
-          var angle = (i / balls) * 4 * Math.PI + t / 3;
-          var offset = (Math.pow(Math.cos(angle / 2 + t), 51) * v) / 16;
-          var radius = v / 3 + offset;
-          var x = w / 2 + radius * Math.cos(angle);
-          var y = h / 2 - radius * Math.sin(angle);
-          ctx.fillStyle = `hsl(${(i / balls) * 360}deg, 80%, 80%)`;
-          ctx.beginPath();
-          ctx.arc(x, y, v / 140, 0, 2 * Math.PI);
-          ctx.fill();
-        }
-        requestAnimationFrame(animate);
-      }
-    </script>
+    <section>
+      <div class="container">
+        <div class="card" id="feed-system">
+          <div class="content">
+            <div class="imgBx">
+              <img src="/images/study.jpg" alt="Feed System" />
+            </div>
+            <div class="contentBx">
+              <h3>FEED SYSTEM<br /><span>먹이 공급 시스템</span></h3>
+            </div>
+          </div>
+          <ul class="sci">
+            <li><a href="#features-feed">FEATURES</a></li>
+            <li><a href="#code-feed">CODE</a></li>
+            <li><a href="#item-feed">ITEM</a></li>
+          </ul>
+        </div>
+        <div class="card" id="sensors-system">
+          <div class="content">
+            <div class="imgBx">
+              <img src="/images/study.jpg" alt="Sensors System" />
+            </div>
+            <div class="contentBx">
+              <h3>
+                SENSORS SYSTEM<br /><span>온도, pH센서, 수위 조절 시스템</span>
+              </h3>
+            </div>
+          </div>
+          <ul class="sci">
+            <li><a href="#features-sensors">FEATURES</a></li>
+            <li><a href="#code-sensors">CODE</a></li>
+            <li><a href="#item-sensors">ITEM</a></li>
+          </ul>
+        </div>
+        <div class="card" id="live-monitoring">
+          <div class="content">
+            <div class="imgBx">
+              <img src="/images/study.jpg" alt="Live Monitoring" />
+            </div>
+            <div class="contentBx">
+              <h3>LIVE MONITORING<br /><span>실시간 화면 송출</span></h3>
+            </div>
+          </div>
+          <ul class="sci">
+            <li><a href="#features-monitoring">FEATURES</a></li>
+            <li><a href="#code-monitoring">CODE</a></li>
+            <li><a href="#item-monitoring">ITEM</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
